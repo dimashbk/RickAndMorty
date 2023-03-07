@@ -9,9 +9,10 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    var delegate: SettingsCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .blue
         // Do any additional setup after loading the view.
     }
     

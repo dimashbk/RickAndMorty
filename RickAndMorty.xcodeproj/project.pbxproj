@@ -17,6 +17,8 @@
 		1D3D31FA29B7BEE8003D780B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31F929B7BEE8003D780B /* AppCoordinator.swift */; };
 		1D3D31FC29B7C0F3003D780B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */; };
 		1D3D320129B7C203003D780B /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D320029B7C203003D780B /* LocationCoordinator.swift */; };
+		1D3D320529B7C5A9003D780B /* EpisodeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D320429B7C5A9003D780B /* EpisodeCoordinator.swift */; };
+		1D3D320829B7C702003D780B /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D320729B7C702003D780B /* SettingsCoordinator.swift */; };
 		1DA49EE229B7A2C20037D410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49EE129B7A2C20037D410 /* AppDelegate.swift */; };
 		1DA49EE429B7A2C20037D410 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49EE329B7A2C20037D410 /* SceneDelegate.swift */; };
 		1DA49EEB29B7A2C30037D410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA49EEA29B7A2C30037D410 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		1D3D31F929B7BEE8003D780B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1D3D320029B7C203003D780B /* LocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
+		1D3D320429B7C5A9003D780B /* EpisodeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCoordinator.swift; sourceTree = "<group>"; };
+		1D3D320729B7C702003D780B /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		1DA49EDE29B7A2C20037D410 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA49EE129B7A2C20037D410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA49EE329B7A2C20037D410 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +126,8 @@
 		1D3D31EB29B7B1E0003D780B /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3D31EF29B7B200003D780B /* EpisodeViewController.swift */,
+				1D3D320329B7C593003D780B /* Coordinator */,
+				1D3D320229B7C58C003D780B /* View */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -130,7 +135,8 @@
 		1D3D31EC29B7B1E9003D780B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */,
+				1D3D320929B7C747003D780B /* View */,
+				1D3D320629B7C6EF003D780B /* Coordinator */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -171,6 +177,38 @@
 			isa = PBXGroup;
 			children = (
 				1D3D31F129B7B20B003D780B /* LocationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D3D320229B7C58C003D780B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31EF29B7B200003D780B /* EpisodeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D3D320329B7C593003D780B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D320429B7C5A9003D780B /* EpisodeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D3D320629B7C6EF003D780B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D320729B7C702003D780B /* SettingsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D3D320929B7C747003D780B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,11 +316,13 @@
 				1D3D31FC29B7C0F3003D780B /* SettingsViewController.swift in Sources */,
 				1D3D31FA29B7BEE8003D780B /* AppCoordinator.swift in Sources */,
 				1D3D31F529B7B343003D780B /* CharacterCoordinator.swift in Sources */,
+				1D3D320529B7C5A9003D780B /* EpisodeCoordinator.swift in Sources */,
 				1D3D320129B7C203003D780B /* LocationCoordinator.swift in Sources */,
 				1D3D31DA29B7AF10003D780B /* TabBarViewController.swift in Sources */,
 				1D3D31E629B7B103003D780B /* Coordinator.swift in Sources */,
 				1D3D31DD29B7AF7D003D780B /* TabBarCoordinator.swift in Sources */,
 				1D3D31F229B7B20B003D780B /* LocationViewController.swift in Sources */,
+				1D3D320829B7C702003D780B /* SettingsCoordinator.swift in Sources */,
 				1DA49EE429B7A2C20037D410 /* SceneDelegate.swift in Sources */,
 				1D3D31F029B7B200003D780B /* EpisodeViewController.swift in Sources */,
 			);

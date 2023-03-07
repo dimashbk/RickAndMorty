@@ -40,23 +40,33 @@ class TabBarCoordinator: Coordinator {
         locationVC.tabBarItem.image = UIImage(named: "Location")
         locationVC.tabBarItem.title = "Location"
         
+        //episode
+        episodeVC.tabBarItem.image = UIImage(systemName: "tv")
+        episodeVC.tabBarItem.title = "Location"
+        
+        //settings
+        settingsVC.tabBarItem.image = UIImage(systemName: "gear")
+        settingsVC.tabBarItem.title = "Settings"
+        
         
         // coordinators
         let characterCoordinator = CharacterCoordinator(navigationController: characterVC)
         let locationCoordinator = LocationCoordinator(navigationController: locationVC)
+        let episodeCoordinator = EpisodeCoordinator(navigationController: episodeVC)
+        let settingsCoordinator = SettingsCoordinator(navigationController: settingsVC)
         
 
         
-        tabBarVC.viewControllers = [characterVC, locationVC]
+        tabBarVC.viewControllers = [characterVC, locationVC, episodeVC, settingsVC]
         
-        [characterVC, locationVC].forEach {
+        [characterVC, locationVC, episodeVC, settingsVC].forEach {
             $0.navigationBar.isHidden = true
         }
         
         coordinate(to: characterCoordinator)
         coordinate(to: locationCoordinator)
-//        coordinate(to: searchCoordinator)
-//        coordinate(to: profileCoordinator)
+        coordinate(to: episodeCoordinator)
+        coordinate(to: settingsCoordinator)
         
     }
 }
