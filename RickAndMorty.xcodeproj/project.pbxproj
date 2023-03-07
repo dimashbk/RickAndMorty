@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3D31DA29B7AF10003D780B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31D929B7AF10003D780B /* TabBarViewController.swift */; };
+		1D3D31DD29B7AF7D003D780B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31DC29B7AF7D003D780B /* TabBarCoordinator.swift */; };
+		1D3D31E629B7B103003D780B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31E529B7B103003D780B /* Coordinator.swift */; };
+		1D3D31E929B7B16F003D780B /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31E829B7B16F003D780B /* CharacterViewController.swift */; };
+		1D3D31F029B7B200003D780B /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31EF29B7B200003D780B /* EpisodeViewController.swift */; };
+		1D3D31F229B7B20B003D780B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31F129B7B20B003D780B /* LocationViewController.swift */; };
+		1D3D31F529B7B343003D780B /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31F429B7B343003D780B /* CharacterCoordinator.swift */; };
+		1D3D31FA29B7BEE8003D780B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31F929B7BEE8003D780B /* AppCoordinator.swift */; };
+		1D3D31FC29B7C0F3003D780B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */; };
+		1D3D320129B7C203003D780B /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D320029B7C203003D780B /* LocationCoordinator.swift */; };
 		1DA49EE229B7A2C20037D410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49EE129B7A2C20037D410 /* AppDelegate.swift */; };
 		1DA49EE429B7A2C20037D410 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49EE329B7A2C20037D410 /* SceneDelegate.swift */; };
 		1DA49EEB29B7A2C30037D410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA49EEA29B7A2C30037D410 /* Assets.xcassets */; };
@@ -14,6 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D3D31D929B7AF10003D780B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		1D3D31DC29B7AF7D003D780B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		1D3D31E529B7B103003D780B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1D3D31E829B7B16F003D780B /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		1D3D31EF29B7B200003D780B /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		1D3D31F129B7B20B003D780B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		1D3D31F429B7B343003D780B /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
+		1D3D31F929B7BEE8003D780B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1D3D320029B7C203003D780B /* LocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
 		1DA49EDE29B7A2C20037D410 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA49EE129B7A2C20037D410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA49EE329B7A2C20037D410 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,19 +53,126 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D3D31D629B7A91B003D780B /* Application Layer */ = {
+		1D3D31D629B7A91B003D780B /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
 				1D3D31D729B7A92B003D780B /* TabBar */,
+				1D3D31E729B7B135003D780B /* Character */,
+				1D3D31EA29B7B1D0003D780B /* Location Service */,
+				1D3D31EC29B7B1E9003D780B /* Settings */,
+				1D3D31EB29B7B1E0003D780B /* Episodes */,
 			);
-			path = "Application Layer";
+			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
 		1D3D31D729B7A92B003D780B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				1D3D31DB29B7AF60003D780B /* Coordinator */,
+				1D3D31F829B7B572003D780B /* View */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1D3D31DB29B7AF60003D780B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31DC29B7AF7D003D780B /* TabBarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D3D31DE29B7AFD5003D780B /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31E529B7B103003D780B /* Coordinator.swift */,
+				1D3D31E329B7B083003D780B /* App Coordinator */,
+				1DA49EE329B7A2C20037D410 /* SceneDelegate.swift */,
+				1DA49EE129B7A2C20037D410 /* AppDelegate.swift */,
+			);
+			path = "Application Layer";
+			sourceTree = "<group>";
+		};
+		1D3D31E329B7B083003D780B /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31F929B7BEE8003D780B /* AppCoordinator.swift */,
+			);
+			path = "App Coordinator";
+			sourceTree = "<group>";
+		};
+		1D3D31E729B7B135003D780B /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31FD29B7C1D7003D780B /* View */,
+				1D3D31F329B7B327003D780B /* Coordinator */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		1D3D31EA29B7B1D0003D780B /* Location Service */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31FE29B7C1DF003D780B /* Coordinator */,
+				1D3D31FF29B7C1E6003D780B /* View */,
+			);
+			path = "Location Service";
+			sourceTree = "<group>";
+		};
+		1D3D31EB29B7B1E0003D780B /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31EF29B7B200003D780B /* EpisodeViewController.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		1D3D31EC29B7B1E9003D780B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31FB29B7C0F3003D780B /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1D3D31F329B7B327003D780B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31F429B7B343003D780B /* CharacterCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D3D31F829B7B572003D780B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31D929B7AF10003D780B /* TabBarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D3D31FD29B7C1D7003D780B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31E829B7B16F003D780B /* CharacterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D3D31FE29B7C1DF003D780B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D320029B7C203003D780B /* LocationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D3D31FF29B7C1E6003D780B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D31F129B7B20B003D780B /* LocationViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1DA49ED529B7A2C20037D410 = {
@@ -67,9 +194,8 @@
 		1DA49EE029B7A2C20037D410 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				1D3D31D629B7A91B003D780B /* Application Layer */,
-				1DA49EE129B7A2C20037D410 /* AppDelegate.swift */,
-				1DA49EE329B7A2C20037D410 /* SceneDelegate.swift */,
+				1D3D31DE29B7AFD5003D780B /* Application Layer */,
+				1D3D31D629B7A91B003D780B /* Presentation Layer */,
 				1DA49EEA29B7A2C30037D410 /* Assets.xcassets */,
 				1DA49EEC29B7A2C30037D410 /* LaunchScreen.storyboard */,
 				1DA49EEF29B7A2C30037D410 /* Info.plist */,
@@ -147,8 +273,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3D31E929B7B16F003D780B /* CharacterViewController.swift in Sources */,
 				1DA49EE229B7A2C20037D410 /* AppDelegate.swift in Sources */,
+				1D3D31FC29B7C0F3003D780B /* SettingsViewController.swift in Sources */,
+				1D3D31FA29B7BEE8003D780B /* AppCoordinator.swift in Sources */,
+				1D3D31F529B7B343003D780B /* CharacterCoordinator.swift in Sources */,
+				1D3D320129B7C203003D780B /* LocationCoordinator.swift in Sources */,
+				1D3D31DA29B7AF10003D780B /* TabBarViewController.swift in Sources */,
+				1D3D31E629B7B103003D780B /* Coordinator.swift in Sources */,
+				1D3D31DD29B7AF7D003D780B /* TabBarCoordinator.swift in Sources */,
+				1D3D31F229B7B20B003D780B /* LocationViewController.swift in Sources */,
 				1DA49EE429B7A2C20037D410 /* SceneDelegate.swift in Sources */,
+				1D3D31F029B7B200003D780B /* EpisodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
