@@ -92,3 +92,6 @@ final class APIRequest{
     
     
 }
+extension APIRequest {
+    static let listCharactersRequest = APIRequest(endpoint: .character)
+}

@@ -6,19 +6,28 @@
 //
 
 import UIKit
+import SnapKit
 
 final class CharacterViewController: UIViewController {
     
     var delegate: CharacterCoordinator?
     
+    let characterListView = CharacterListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        
-        let request = APIRequest(endpoint: .episode)
-        print(request.url)
+        view.addSubview(characterListView)
+        makeConstraints()
     }
     
+    private func makeConstraints(){
+        characterListView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    
+    }
+        
 
     /*
     // MARK: - Navigation

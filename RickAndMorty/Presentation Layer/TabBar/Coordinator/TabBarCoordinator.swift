@@ -36,6 +36,7 @@ class TabBarCoordinator: Coordinator {
         characterVC.tabBarItem.image = UIImage(named: "Character")
         characterVC.tabBarItem.title = "Character"
         
+        
         //location
         locationVC.tabBarItem.image = UIImage(named: "Location")
         locationVC.tabBarItem.title = "Location"
