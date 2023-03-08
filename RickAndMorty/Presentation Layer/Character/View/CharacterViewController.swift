@@ -7,14 +7,16 @@
 
 import UIKit
 
-class CharacterViewController: UIViewController {
+final class CharacterViewController: UIViewController {
     
     var delegate: CharacterCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        // Do any additional setup after loading the view.
+        
+        let request = APIRequest(endpoint: .episode)
+        print(request.url)
     }
     
 

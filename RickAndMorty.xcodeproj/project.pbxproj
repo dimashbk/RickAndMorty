@@ -293,9 +293,9 @@
 		1DA49EE029B7A2C20037D410 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				1D3D31DE29B7AFD5003D780B /* Application Layer */,
 				1D3D321529B7CAFC003D780B /* Business Logic Layer */,
 				1D3D320B29B7C8A1003D780B /* Network Layer */,
-				1D3D31DE29B7AFD5003D780B /* Application Layer */,
 				1D3D31D629B7A91B003D780B /* Presentation Layer */,
 				1DA49EEA29B7A2C30037D410 /* Assets.xcassets */,
 				1DA49EEF29B7A2C30037D410 /* Info.plist */,

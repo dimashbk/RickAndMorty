@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class CharacterCoordinator: Coordinator{
+final class CharacterCoordinator: Coordinator{
     
     private let navigationController: UINavigationController
     

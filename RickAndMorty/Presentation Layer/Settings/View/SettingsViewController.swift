@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
     var delegate: SettingsCoordinator?
     override func viewDidLoad() {
