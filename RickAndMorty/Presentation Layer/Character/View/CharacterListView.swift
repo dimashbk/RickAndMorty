@@ -28,7 +28,10 @@ final class CharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: "cell")
+        collectionView.register(CharacterCollectionViewCell.self,
+                                forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
         return collectionView
     }()
     
@@ -36,6 +39,7 @@ final class CharacterListView: UIView {
         super.init(frame: frame)
         initialize()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -45,6 +49,7 @@ final class CharacterListView: UIView {
         addSubview(spinner)
         addSubview(collectionView)
         spinner.startAnimating()
+        viewModel.delegate = self
         viewModel.fetchCharacters()
         setupCollectionView()
         makeConstraints()
@@ -62,14 +67,6 @@ final class CharacterListView: UIView {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: { [self]
-            self.spinner.stopAnimating()
-            self.collectionView.isHidden = false
-            UIView.animate(withDuration: 0.4) {
-                self.collectionView.alpha = 1
-            }
-        })
     }
 
 }
@@ -77,19 +74,36 @@ final class CharacterListView: UIView {
 extension CharacterListView: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        viewModel.cellViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemGreen
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.cellIdentifier,
+                                                      for: indexPath) as! CharacterCollectionViewCell
+    
+        cell.configure(with: viewModel.cellViewModels[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let bounds = UIScreen.main.bounds
         let width = (bounds.width-30)/2
         return CGSize(width: width, height: width * 1.5)
+    }
+    
+    
+}
+
+extension CharacterListView: CharacterDelegate{
+    func didLoadInitialCharatcers() {
+        spinner.stopAnimating()
+        collectionView.isHidden = false
+        collectionView.reloadData()
+        UIView.animate(withDuration: 0.4) {
+            self.collectionView.alpha = 1
+        }
     }
     
     
