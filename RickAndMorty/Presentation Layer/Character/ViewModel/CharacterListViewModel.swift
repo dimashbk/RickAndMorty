@@ -10,6 +10,7 @@ import Foundation
 protocol CharacterDelegate: AnyObject{
     
     func didLoadInitialCharatcers()
+    func didSelectCharacter(_ character: Character)
     
 }
 final class CharacterListViewModel{
@@ -33,7 +34,7 @@ final class CharacterListViewModel{
             switch result {
             case .success(let resultsModel):
                 let results = resultsModel.results
-                let info = resultsModel.info
+//                let info = resultsModel.info
                 self?.characters = results
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharatcers()

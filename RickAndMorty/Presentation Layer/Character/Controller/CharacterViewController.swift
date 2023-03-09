@@ -10,23 +10,35 @@ import SnapKit
 
 final class CharacterViewController: UIViewController {
     
-    var delegate: CharacterCoordinator?
+//    var delegate: CharacterCoordinator?
     
     let characterListView = CharacterListView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
-        view.addSubview(characterListView)
+        setUp()
         makeConstraints()
+        
     }
     
     private func makeConstraints(){
         characterListView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    
     }
+    
+    private func setUp(){
+        view.backgroundColor = .yellow
+        view.addSubview(characterListView)
+//        characterListView.delegate = self
+        
+    }
+//    func characterListView(_ characterListView: CharacterListView, didSelectCharacter character: Character) {
+//
+//        let viewModel = CharacterDetailViewModel(character: character)
+//        let detailVC = CharacterDetailViewController(viewModel: viewModel)
+//        navigationController?.pushViewController(detailVC, animated: true)
+//    }
         
 
     /*

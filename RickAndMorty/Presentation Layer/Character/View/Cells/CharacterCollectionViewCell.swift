@@ -39,6 +39,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
         makeConstraints()
+        setupLayers()
     }
     override func prepareForReuse() {
         super.prepareForReuse()

@@ -7,9 +7,18 @@
 
 import UIKit
 
+protocol CharacterListViewDelegate: AnyObject{
+    func characterListView(_ characterListView: CharacterListView,
+                           didSelectCharacter character: Character
+    )
+}
 final class CharacterListView: UIView {
     
-    private let viewModel = CharacterListViewModel()
+    let viewModel = CharacterListViewModel()
+    
+    weak var delegate: CharacterListViewDelegate?
+    
+    var coordinator: CharacterCoordinator?
     
     private let spinner: UIActivityIndicatorView = {
         
@@ -70,33 +79,11 @@ final class CharacterListView: UIView {
     }
 
 }
-
-extension CharacterListView: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.cellViewModels.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.cellIdentifier,
-                                                      for: indexPath) as! CharacterCollectionViewCell
-    
-        cell.configure(with: viewModel.cellViewModels[indexPath.item])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let bounds = UIScreen.main.bounds
-        let width = (bounds.width-30)/2
-        return CGSize(width: width, height: width * 1.5)
-    }
-    
-    
-}
-
 extension CharacterListView: CharacterDelegate{
+    func didSelectCharacter(_ character: Character) {
+        delegate?.characterListView(self, didSelectCharacter: character )
+    }
+    
     func didLoadInitialCharatcers() {
         spinner.stopAnimating()
         collectionView.isHidden = false
@@ -105,6 +92,8 @@ extension CharacterListView: CharacterDelegate{
             self.collectionView.alpha = 1
         }
     }
-    
-    
 }
+
+
+
+
