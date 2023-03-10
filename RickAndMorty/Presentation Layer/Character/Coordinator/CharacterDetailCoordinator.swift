@@ -7,20 +7,23 @@
 
 import Foundation
 import UIKit
-class CharacterDetailCoordinator: Coordinator{  
+class CharacterDetailCoordinator: Coordinator{
     
+    
+    let viewModel: CharacterDetailViewModel?
     private let navigationController: UINavigationController
-    private let character: Character
     
-    init(navigationController: UINavigationController, didSelectCharacter character: Character) {
+    
+    init(navigationController: UINavigationController, viewModel: CharacterDetailViewModel) {
         self.navigationController = navigationController
-        self.character = character
+        self.viewModel = viewModel
+
     }
     
     func start() {
-        let viewModel = CharacterDetailViewModel(character: character)
-        let detailVC = CharacterDetailViewController(viewModel: viewModel)
-        navigationController.pushViewController(detailVC, animated: true)
+        let characterDetailVC = CharacterDetailViewController(viewModel: viewModel!)
+        navigationController.pushViewController(characterDetailVC, animated: true)
     }
+   
 }
 

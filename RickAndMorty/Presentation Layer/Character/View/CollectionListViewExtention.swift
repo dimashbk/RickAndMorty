@@ -31,7 +31,7 @@ extension CharacterListView: UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let character = viewModel.characters[indexPath.item]
         viewModel.delegate?.didSelectCharacter(character)
-        coordinator?.characterListView(self, didSelectCharacter: character)
+
         
     }
     

@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class CharacterViewController: UIViewController {
-    
-//    var delegate: CharacterCoordinator?
+final class CharacterViewController: UIViewController, CharacterListViewDelegate{
     
     let characterListView = CharacterListView()
+    
+    var coordinator: CharacterCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +30,13 @@ final class CharacterViewController: UIViewController {
     private func setUp(){
         view.backgroundColor = .yellow
         view.addSubview(characterListView)
-//        characterListView.delegate = self
+        characterListView.delegate = self
         
     }
-//    func characterListView(_ characterListView: CharacterListView, didSelectCharacter character: Character) {
-//
-//        let viewModel = CharacterDetailViewModel(character: character)
-//        let detailVC = CharacterDetailViewController(viewModel: viewModel)
-//        navigationController?.pushViewController(detailVC, animated: true)
-//    }
+    func characterListView(_ characterListView: CharacterListView, didSelectCharacter character: Character) {
+        let viewModel = CharacterDetailViewModel(character: character)
+        self.coordinator?.showDetail(viewModel)
+    }
         
 
     /*
