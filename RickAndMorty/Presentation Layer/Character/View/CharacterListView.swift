@@ -41,6 +41,9 @@ final class CharacterListView: UIView {
                                 forCellWithReuseIdentifier: "cell")
         collectionView.register(CharacterCollectionViewCell.self,
                                 forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
+        collectionView.register(FooterLoadingCollectionReusableView.self
+                                , forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: FooterLoadingCollectionReusableView.identifier)
         return collectionView
     }()
     
