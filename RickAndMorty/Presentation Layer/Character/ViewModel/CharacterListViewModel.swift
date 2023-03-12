@@ -23,9 +23,14 @@ final class CharacterListViewModel{
     
     var characters: [Character] = [] {
         didSet {
-            for character in characters where !cellViewModels.contains(where: { $0.characterName == character.name }){
-                let viewModel = CharacterCollectionViewCellViewModel(characterName: character.name, characterStatus: character.status, characterImageUrl: URL(string: character.image))
-                cellViewModels.append(viewModel)
+            for character in characters{
+                let viewModel = CharacterCollectionViewCellViewModel(characterName: character.name,
+                                                                     characterStatus: character.status,
+                                                                     characterImageUrl: URL(string: character.image))
+                if !cellViewModels.contains(viewModel) {
+                    cellViewModels.append(viewModel)
+                }
+                
             }
         }
     }

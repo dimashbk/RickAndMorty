@@ -7,12 +7,14 @@
 
 import Foundation
 
-final class CharacterCollectionViewCellViewModel: Hashable{
+final class CharacterCollectionViewCellViewModel: Hashable, Equatable{
     static func == (lhs: CharacterCollectionViewCellViewModel, rhs: CharacterCollectionViewCellViewModel) -> Bool {
-        <#code#>
+        return lhs.hashValue == rhs.hashValue
     }
     func hash(into hasher: inout Hasher) {
-        <#code#>
+        hasher.combine(characterName)
+        hasher.combine(characterStatus)
+        hasher.combine(characterImageUrl)
     }
     
     let characterName: String
