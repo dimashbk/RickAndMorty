@@ -12,6 +12,7 @@ protocol CharacterDelegate: AnyObject{
     
     func didLoadInitialCharatcers()
     func didSelectCharacter(_ character: Character)
+    func didLoadMoreCharacters(with newIndexPaths: [IndexPath])
     
 }
 final class CharacterListViewModel{
@@ -22,8 +23,7 @@ final class CharacterListViewModel{
     
     var characters: [Character] = [] {
         didSet {
-            print("Creating viewModels")
-            for character in characters {
+            for character in characters where !cellViewModels.contains(where: { $0.characterName == character.name }){
                 let viewModel = CharacterCollectionViewCellViewModel(characterName: character.name, characterStatus: character.status, characterImageUrl: URL(string: character.image))
                 cellViewModels.append(viewModel)
             }
@@ -64,11 +64,32 @@ final class CharacterListViewModel{
         }
         APIService.shared.execute(request,
                                   expecting: GetAllCharactersResponse.self){  [weak self] result in
+            
+            guard let strongSelf = self else{
+                return
+            }
             switch result {
-            case .success(_):
+            case .success(let resultModel):
+                let moreResults = resultModel.results
+                let info = resultModel.info
+                strongSelf.apiInfo = info
+                strongSelf.characters = moreResults
+                
+                let originalCount = strongSelf.characters.count
+                let newCount = moreResults.count
+                let total = originalCount + newCount
+                let startingIndex = total - newCount - 1
+                let indexPathToAdd: [IndexPath] = Array(startingIndex ..< (startingIndex + newCount)).compactMap {
+                    return IndexPath(row: $0, section: 0)
+                }
+                DispatchQueue.main.async {
+                    strongSelf.delegate?.didLoadMoreCharacters(with: indexPathToAdd)
+                    strongSelf.isLoading = false
+                }
                 print("1")
             case .failure(_):
                 print("2")
+                self?.isLoading = false
             }
             
         }

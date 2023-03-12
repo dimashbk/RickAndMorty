@@ -83,6 +83,12 @@ final class CharacterListView: UIView {
 
 }
 extension CharacterListView: CharacterDelegate{
+    func didLoadMoreCharacters(with newIndexPaths:[IndexPath]) {
+        collectionView.performBatchUpdates {
+            self.collectionView.insertItems(at: newIndexPaths)
+        }
+    }
+    
     func didSelectCharacter(_ character: Character) {
         delegate?.characterListView(self, didSelectCharacter: character )
     }
